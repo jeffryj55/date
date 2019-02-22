@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+ 
+        #demo{
+          font-size: 20px;
+         position:relative;
+          font-style: oblique;
+          z-index: 1;
+        }
+        .row img{
+
+          position:absolute;
+          z-index: -1;
+          
+         
+
+        }
+</style>
+</head>
+<div class="container-fluid  bg-primary text-center">
+      <div class="container">
+     	<div class="row">
+     		<div class="col-lg-12 col-md-12 col-sm-12">
+     	    <h1 class="title text-secondary">DAY</h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid  text-center">
+      <div class="container">
+      	<div class="row">
+     		<br><br><br><div class="col-lg-12 col-md-12 col-sm-12">
+<input id="myInput" style="background: blue; color:white" type="text"><br><br>
+
+<button onclick="myFunction()"style="background: blue; color:white; border: 4px inset;">Try it</button><br><br>
+
+<p id="demo"></p>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function myFunction() {
+  var text;
+  var fruits = document.getElementById("myInput").value;
+
+  switch (fruits) {
+    case "today":
+     var d = new Date();
+document.getElementById("demo").innerHTML = d;
+      break;
+    
+    case  "tomorrow":
+  var currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 1);
+     document.getElementById("demo").innerHTML = currentDate;
+      break;
+
+    case "previous":
+    
+      var currentDate = new Date();
+currentDate.setDate(currentDate.getDate() - 1);
+     document.getElementById("demo").innerHTML = currentDate;
+     break;
+  default:
+  document.getElementById("demo").innerHTML = "Today is ";
+  break;
+}
+}
+</script>
+
+</body>
+</html>
